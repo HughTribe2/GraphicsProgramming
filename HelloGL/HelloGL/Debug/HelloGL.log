@@ -1,0 +1,11 @@
+﻿  GLUTCallbacks.cpp
+  HelloGL.cpp
+C:\Users\t012314p\Documents\GitHub\GraphicsProgramming\HelloGL\HelloGL\GLUTCallbacks.cpp(28,17): error C2143: syntax error: missing ')' before 'constant'
+C:\Users\t012314p\Documents\GitHub\GraphicsProgramming\HelloGL\HelloGL\GLUTCallbacks.cpp(28,17): error C2143: syntax error: missing ';' before 'constant'
+C:\Users\t012314p\Documents\GitHub\GraphicsProgramming\HelloGL\HelloGL\GLUTCallbacks.cpp(28,17): error C2059: syntax error: 'constant'
+C:\Users\t012314p\Documents\GitHub\GraphicsProgramming\HelloGL\HelloGL\GLUTCallbacks.cpp(28,28): error C2059: syntax error: ')'
+C:\Users\t012314p\Documents\GitHub\GraphicsProgramming\HelloGL\HelloGL\GLUTCallbacks.cpp(30,2): error C2143: syntax error: missing ';' before '{'
+C:\Users\t012314p\Documents\GitHub\GraphicsProgramming\HelloGL\HelloGL\GLUTCallbacks.cpp(30,2): error C2447: '{': missing function header (old-style formal list?)
+C:\Users\t012314p\Documents\GitHub\GraphicsProgramming\HelloGL\HelloGL\HelloGL.cpp(30,12): error C2065: 'rotation': undeclared identifier
+  Main.cpp
+  Generating Code...

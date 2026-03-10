@@ -3,7 +3,9 @@ class HelloGL;
 
 namespace GLUTCallbacks
 {
-	void Init(HelloGl* gl);
+	void Init(HelloGL* gl);
+
+	void Timer(int preferredRefresh);
 
 	void Display();
 }

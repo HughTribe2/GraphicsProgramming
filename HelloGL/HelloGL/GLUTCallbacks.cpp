@@ -22,6 +22,16 @@ namespace GLUTCallbacks
 		if (helloGL != nullptr)
 		{
 			helloGL->Display();
+			
+		}
+	}
+	void Timer(int PreferredRefresh)
+	{
+
+		if (helloGL != nullptr)
+		{
+			helloGL->Update();
+			glutTimerFunc(PreferredRefresh, Timer, PreferredRefresh);
 		}
 	}
 }

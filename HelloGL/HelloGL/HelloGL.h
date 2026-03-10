@@ -1,9 +1,9 @@
 #pragma once
-#include <Windows.h>
-#include <gl/GL.h>
-#include <gl/GLU.h>
-#include "GL/freeglut.h"
-# include "GLUTCallbacks.h"
+#include <Windows.h> //Required for OpenGL on windows
+#include <gl/GL.h> // OpenGL
+#include <gl/GLU.h> //Open Utilities
+#include "GL/freeglut.h" //freeglut library
+#define Refreshrate 16
 
 class HelloGL
 {
@@ -16,6 +16,14 @@ public:
 	~HelloGL(void);
 
 	void Display();
+
+	void DrawPolygon();
+
+	void Update();
+
+private:
+	float rotation;
+	
 };
 
 
