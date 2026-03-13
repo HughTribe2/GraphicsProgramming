@@ -19,12 +19,7 @@ void HelloGL::Display()
 	glFlush();
 }
 
-HelloGL::~HelloGL(void)
-{
-	
-}
-
-void DrawPolygon() 
+void HelloGL::DrawPolygon()
 {
 	glPushMatrix();
 	glRotatef(rotation, 0.0f, 0.0f, -1.0f);
@@ -41,6 +36,11 @@ void DrawPolygon()
 		glEnd();
 	}
 	glPopMatrix();
+}
+
+HelloGL::~HelloGL(void)
+{
+	
 }
 
 void HelloGL::Update()

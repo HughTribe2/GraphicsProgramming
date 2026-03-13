@@ -8,4 +8,5 @@ namespace GLUTCallbacks
 	void Timer(int preferredRefresh);
 
 	void Display();
+
 }
