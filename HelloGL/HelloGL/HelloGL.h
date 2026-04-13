@@ -19,10 +19,12 @@ public:
 
 	void DrawPolygon();
 
+	void DrawTriangle();
+
 	void Update();
 
 private:
-	float rotation;
+	float triangleRotation;
 	
 };
 

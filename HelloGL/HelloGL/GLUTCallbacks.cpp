@@ -28,10 +28,10 @@ namespace GLUTCallbacks
 	void Timer(int PreferredRefresh)
 	{
 
-		if (helloGL != nullptr)
-		{
-			helloGL->Update();
-			glutTimerFunc(PreferredRefresh, Timer, PreferredRefresh);
-		}
+		
+		
+		helloGL->Update();
+		glutTimerFunc(PreferredRefresh, Timer, PreferredRefresh);
+		
 	}
 }
