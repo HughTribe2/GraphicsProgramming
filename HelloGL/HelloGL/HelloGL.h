@@ -17,7 +17,7 @@ public:
 
 	void Display();
 
-	void DrawPolygon();
+	void DrawSquare();
 
 	void DrawTriangle();
 
@@ -25,6 +25,7 @@ public:
 
 private:
 	float triangleRotation;
+	float squareRotation;
 	
 };
 
