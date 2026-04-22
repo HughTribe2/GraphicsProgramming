@@ -8,6 +8,7 @@ HelloGL::HelloGL(int argc, char* argv[])
 	
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
+
 	glutInitWindowSize(800, 800);
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Simple OpenGL Program");
