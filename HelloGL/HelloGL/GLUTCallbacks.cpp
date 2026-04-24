@@ -29,9 +29,10 @@ namespace GLUTCallbacks
 	{
 
 		
-		
+		int updateTime = glutGet(GLUT_ELAPSED_TIME);
 		helloGL->Update();
-		glutTimerFunc(PreferredRefresh, Timer, PreferredRefresh);
+		updateTime = glutGet(GLUT_ELAPSED_TIME) - updateTime;
+		glutTimerFunc(PreferredRefresh - updateTime, GLUTCallbacks::Timer, PreferredRefresh);
 		
 	}
 }
