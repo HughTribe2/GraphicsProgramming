@@ -12,6 +12,7 @@ HelloGL::HelloGL(int argc, char* argv[])
 	glutInitWindowSize(800, 800);
 	glutInitWindowPosition(100, 100);
 	glutCreateWindow("Simple OpenGL Program");
+	glutKeyboardFunc(GLUTCallbacks::Keyboard);
 	glutDisplayFunc(GLUTCallbacks::Display);
 	glutTimerFunc(Refreshrate, GLUTCallbacks::Timer, Refreshrate);
 	glutMainLoop();
@@ -70,21 +71,32 @@ HelloGL::~HelloGL(void)
 	
 }
 
+void HelloGL::Keyboard(unsigned char key, int x, int y)
+{
+	if (key == 'd')
+	{
+		triangleRotation += 0.5f;
+
+	}
+
+	if (key == 'a')
+	{
+		triangleRotation -= 0.9f;
+	}
+}
+
 void HelloGL::Update()
 {
 	glutPostRedisplay();
-
-	triangleRotation += 0.5f;
 
 	if (triangleRotation >= 360.0f)
 	{
 		triangleRotation = 0.0f;
 	}
 
-	squareRotation -= 0.9f;
-
 	if (squareRotation <= 0.0f)
 	{
 		squareRotation = 360.0f;
 	}
 }
+
