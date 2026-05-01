@@ -52,7 +52,7 @@ void HelloGL::DrawTriangle()
 {
 	glPushMatrix();
 	glTranslatef(0, 0, 0);
-	glRotatef(triangleRotation, 0.0f, 0.0f, -1.0f);
+	glRotatef(triangleRotation, 1.0f, 0.0f, 0.0f);
 	glBegin(GL_POLYGON);
 	{
 		glColor4f(1.0f, 0.2f, 0.0f, 0.5f);

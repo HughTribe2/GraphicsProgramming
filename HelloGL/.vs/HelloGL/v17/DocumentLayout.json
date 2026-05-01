@@ -42,8 +42,7 @@
               "RelativeToolTip": "HelloGL\\GLUTCallbacks.cpp",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACgAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-06T13:32:32.412Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T13:32:32.412Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "HelloGL\\GLUTCallbacks.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-06T13:32:06.835Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T13:32:06.835Z"
             },
             {
               "$type": "Document",
@@ -66,7 +64,7 @@
               "RelativeDocumentMoniker": "HelloGL\\HelloGL.cpp",
               "ToolTip": "C:\\Users\\t012314p\\Documents\\GitHub\\GraphicsProgramming\\HelloGL\\HelloGL\\HelloGL.cpp",
               "RelativeToolTip": "HelloGL\\HelloGL.cpp",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAEUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-03-06T13:06:15.954Z",
               "EditorCaption": ""
@@ -81,8 +79,7 @@
               "RelativeToolTip": "HelloGL\\Main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-06T13:08:31.948Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T13:08:31.948Z"
             },
             {
               "$type": "Document",
@@ -94,8 +91,7 @@
               "RelativeToolTip": "HelloGL\\HelloGL.h",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-06T13:06:04.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T13:06:04.929Z"
             }
           ]
         }
