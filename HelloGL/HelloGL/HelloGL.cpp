@@ -2,9 +2,14 @@
 #include "GLUTCallbacks.h"
 
 HelloGL::HelloGL(int argc, char* argv[])
-{
-	triangleRotation = 0.0f;
-	squareRotation = 0.0f;
+{	
+	rotation = 0.0f;
+
+	camera = new Camera();
+
+	camera->eye.x = 0.0f; camera->eye.y = 0.0f; camera->eye.z = 1.0f;
+	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
+	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
 	
 	GLUTCallbacks::Init(this);
 	glutInit(&argc, argv);
@@ -15,25 +20,41 @@ HelloGL::HelloGL(int argc, char* argv[])
 	glutKeyboardFunc(GLUTCallbacks::Keyboard);
 	glutDisplayFunc(GLUTCallbacks::Display);
 	glutTimerFunc(Refreshrate, GLUTCallbacks::Timer, Refreshrate);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	//set the viewport to be the entire window
+	glViewport(0, 0, 800, 800	);
+
+	//set the correct perspective
+	gluPerspective(45, 1, 0.5, 1000);
+
+	glMatrixMode(GL_MODELVIEW);
 	glutMainLoop();
+}
+
+HelloGL::~HelloGL(void)
+{
+	delete camera;
+	camera = nullptr;
 }
 
 void HelloGL::Display()
 {
 	glClear(GL_COLOR_BUFFER_BIT); //this clears the scene
 	//DrawPolygon();
-	DrawTriangle();
-	DrawSquare();
+	glTranslatef(0.0f, 0.0f, -5.0f);
+	DrawTeapot();
+	DrawCube();
 	glFlush();
 	glutSwapBuffers();
 }
 
-void HelloGL::DrawSquare()
+void HelloGL::DrawCube()
 {
 	glPushMatrix();
-	glTranslatef(0, 0, 0);
-	glRotatef(triangleRotation, 0.0f, 0.0f, -1.0f);
-	glBegin(GL_POLYGON);
+	glTranslatef(0.7f, -0.8f, -0.3f);
+	glRotatef(rotation, 0.2f, 0.8f, -1.0f);
+	/*glBegin(GL_POLYGON);
 	{
 		glColor4f(1.0f, 0.0f, 0.0f, 0.5f);
 		glVertex2f(0.3, 0.5);
@@ -44,16 +65,17 @@ void HelloGL::DrawSquare()
 		glColor4f(0.9f, 0.4f, 0.1f, 0.67f);
 		glVertex2f(0.3, 0.4);
 		glEnd();
-	}
+	}*/
+	glColor4f(1.0f, 0.0f, 0.0f, 0.5f);
+	glutWireCube(0.5);
 	glPopMatrix();
 }
 
-void HelloGL::DrawTriangle()
+void HelloGL::DrawTeapot()
 {
 	glPushMatrix();
-	glTranslatef(0, 0, 0);
-	glRotatef(triangleRotation, 1.0f, 0.0f, 0.0f);
-	glBegin(GL_POLYGON);
+	glRotatef(rotation, 1.0f, -0.9f, 0.0f);
+	/*glBegin(GL_POLYGON);
 	{
 		glColor4f(1.0f, 0.2f, 0.0f, 0.5f);
 		glVertex2f(-0.7, -0.5);
@@ -62,41 +84,68 @@ void HelloGL::DrawTriangle()
 		glColor4f(0.3f, 0.0f, 1.0f, 0.76f);
 		glVertex2f(-0.35, 0);
 		glEnd();
-	}
+	}*/
+	glColor4f(0.3f, 0.0f, 1.0f, 0.76f);
+	glutWireTeapot(0.7);
 	glPopMatrix();
-}
-
-HelloGL::~HelloGL(void)
-{
-	
 }
 
 void HelloGL::Keyboard(unsigned char key, int x, int y)
 {
-	if (key == 'd')
+	if (key == 'e')
 	{
-		triangleRotation += 0.5f;
+		rotation += 2.0f;
 
+	}
+
+	if (key == 'q')
+	{
+		rotation -= 2.0f;
+	}
+
+	if (key == 'w')
+	{
+		camera->eye.z += -0.1f;
+	}
+
+	if (key == 's')
+	{
+		camera->eye.z += 0.1f;
 	}
 
 	if (key == 'a')
 	{
-		triangleRotation -= 0.9f;
+		camera->center.x += -0.1f;
+	}
+
+	if (key == 'd')
+	{
+		camera->center.x += 0.1f;
+	}
+
+	if (key == ' ')
+	{
+		camera->eye.y += 0.1f;
+	}
+
+	if (key == '\b')
+	{
+		camera->eye.y += -0.1f;
 	}
 }
 
 void HelloGL::Update()
 {
+	glLoadIdentity();
+
+	gluLookAt(camera->eye.x, camera->eye.y, camera->eye.z, camera->center.x, camera->center.y,
+		camera->center.z, camera->up.x, camera->up.y, camera->up.z);
+
 	glutPostRedisplay();
 
-	if (triangleRotation >= 360.0f)
+	if (rotation >= 360.0f)
 	{
-		triangleRotation = 0.0f;
-	}
-
-	if (squareRotation <= 0.0f)
-	{
-		squareRotation = 360.0f;
+		rotation = 0.0f;
 	}
 }
 

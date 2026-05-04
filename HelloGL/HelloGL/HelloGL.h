@@ -5,9 +5,19 @@
 #include "GL/freeglut.h" //freeglut library
 #define Refreshrate 16
 
+struct Vector3
+{
+	float x, y, z;
+};
+
+struct Camera
+{
+	Vector3	eye, center, up;
+};
+
 class HelloGL
 {
-public:
+public:	
 
 	//constructor definition
 	HelloGL(int argc, char* argv[]);
@@ -17,17 +27,18 @@ public:
 
 	void Display();
 
-	void DrawSquare();
+	void DrawCube();
 
-	void DrawTriangle();
+	void DrawTeapot();
 
 	void Update();
 
 	void Keyboard(unsigned char key, int x, int y);
 
 private:
-	float triangleRotation;
-	float squareRotation;
+	float rotation;
+	Camera* camera;
+
 	
 };
 
