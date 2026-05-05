@@ -15,6 +15,16 @@ struct Camera
 	Vector3	eye, center, up;
 };
 
+struct Color
+{
+	GLfloat r, g, b;
+};
+
+struct Vertex
+{
+	GLfloat x, y, z;
+};
+
 class HelloGL
 {
 public:	
@@ -29,8 +39,12 @@ public:
 
 	void DrawCube();
 
+	void DrawCube2();
+
 	void DrawTeapot();
 
+	void DrawCubeArray();
+		
 	void Update();
 
 	void Keyboard(unsigned char key, int x, int y);
@@ -38,6 +52,8 @@ public:
 private:
 	float rotation;
 	Camera* camera;
+	static Color colors[];
+	static Vertex vertices[];
 
 	
 };
