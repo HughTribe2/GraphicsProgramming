@@ -33,6 +33,11 @@ Color HelloGL::colors[] =
 	0, 1, 0,  0, 1, 1,  0, 0, 1    //face v6-v5-v4
 };
 
+Vertex HelloGL::indexedVertices[] =
+{
+
+};
+
 HelloGL::HelloGL(int argc, char* argv[])
 {	
 	rotation = 0.0f;
@@ -230,8 +235,8 @@ void HelloGL::DrawCubeArray()
 	glBegin(GL_TRIANGLES);
 	for (int i = 0; i < 36; i++)
 	{
-		glColor3f(colors[i].r, colors[i].g, colors[i].b);
-		glVertex3f(vertices[i].x, vertices[i].y, vertices[i].z);
+		glColor3fv(&colors[i].r);
+		glVertex3fv(&vertices[i].x);
 	}
 
 	glEnd();

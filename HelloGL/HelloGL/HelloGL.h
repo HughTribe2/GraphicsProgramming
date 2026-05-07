@@ -54,6 +54,9 @@ private:
 	Camera* camera;
 	static Color colors[];
 	static Vertex vertices[];
+	static Vertex indexedVertices[];
+	static Color indexedColors[];
+	static GLushort indices[];	
 
 	
 };
