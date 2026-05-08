@@ -44,6 +44,8 @@ public:
 	void DrawTeapot();
 
 	void DrawCubeArray();
+
+	void DrawIndexedCube();
 		
 	void Update();
 
