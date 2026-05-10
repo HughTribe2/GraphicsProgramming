@@ -7,6 +7,22 @@
       "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\HelloGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Structures.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\Structures.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\GLUTCallbacks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\GLUTCallbacks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\GLUTCallbacks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\GLUTCallbacks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\Cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -15,24 +31,8 @@
       "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\Cube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Structures.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\Structures.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\HelloGL.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\HelloGL.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\GLUTCallbacks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\GLUTCallbacks.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\GLUTCallbacks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\GLUTCallbacks.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,13 +50,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Cube.cpp",
               "DocumentMoniker": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.cpp",
               "RelativeDocumentMoniker": "HelloGL\\Cube.cpp",
               "ToolTip": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.cpp",
               "RelativeToolTip": "HelloGL\\Cube.cpp",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAEYAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAEMAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-08T21:34:21.62Z",
               "EditorCaption": ""
@@ -69,27 +69,27 @@
               "RelativeDocumentMoniker": "HelloGL\\HelloGL.cpp",
               "ToolTip": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\HelloGL.cpp",
               "RelativeToolTip": "HelloGL\\HelloGL.cpp",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-08T21:33:53.619Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Cube.h",
               "DocumentMoniker": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.h",
               "RelativeDocumentMoniker": "HelloGL\\Cube.h",
               "ToolTip": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.h",
               "RelativeToolTip": "HelloGL\\Cube.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwA8AAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwBUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-05-08T21:28:57.282Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Structures.h",
               "DocumentMoniker": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Structures.h",
               "RelativeDocumentMoniker": "HelloGL\\Structures.h",
@@ -97,11 +97,12 @@
               "RelativeToolTip": "HelloGL\\Structures.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-08T21:23:28.349Z"
+              "WhenOpened": "2026-05-08T21:23:28.349Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "GLUTCallbacks.cpp",
               "DocumentMoniker": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\GLUTCallbacks.cpp",
               "RelativeDocumentMoniker": "HelloGL\\GLUTCallbacks.cpp",
@@ -109,11 +110,12 @@
               "RelativeToolTip": "HelloGL\\GLUTCallbacks.cpp",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-06T13:32:32.412Z"
+              "WhenOpened": "2026-03-06T13:32:32.412Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "GLUTCallbacks.h",
               "DocumentMoniker": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\GLUTCallbacks.h",
               "RelativeDocumentMoniker": "HelloGL\\GLUTCallbacks.h",
@@ -121,11 +123,12 @@
               "RelativeToolTip": "HelloGL\\GLUTCallbacks.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-06T13:32:06.835Z"
+              "WhenOpened": "2026-03-06T13:32:06.835Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "Main.cpp",
               "DocumentMoniker": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Main.cpp",
               "RelativeDocumentMoniker": "HelloGL\\Main.cpp",
@@ -133,19 +136,21 @@
               "RelativeToolTip": "HelloGL\\Main.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-03-06T13:08:31.948Z"
+              "WhenOpened": "2026-03-06T13:08:31.948Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "HelloGL.h",
               "DocumentMoniker": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\HelloGL.h",
               "RelativeDocumentMoniker": "HelloGL\\HelloGL.h",
               "ToolTip": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\HelloGL.h",
               "RelativeToolTip": "HelloGL\\HelloGL.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwB0AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-06T13:06:04.929Z"
+              "WhenOpened": "2026-03-06T13:06:04.929Z",
+              "EditorCaption": ""
             }
           ]
         }

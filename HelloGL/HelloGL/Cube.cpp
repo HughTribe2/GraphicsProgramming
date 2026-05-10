@@ -38,32 +38,34 @@ GLushort Cube::indices[] =
 };
 
 
-Cube::Cube()
+Cube::Cube(float x, float y, float z)
 {
-	m_position.x = 0.0f;
-	m_position.x = 0.0f;
-	m_position.z = 5.0f;
+	m_position.x = x;
+	m_position.x = y;
+	m_position.z = z;
+
+	m_rotation = 0;
 }
 
 Cube::~Cube()
 {
 
 }
-
+	
 void Cube::Draw()
 {
-	glPushMatrix();
-	glTranslatef(m_position.x, m_position.y, m_position.z);
-	glRotatef(m_rotation, 1.0f, 0.0f, 0.0f);
-	glBegin(GL_TRIANGLES);
-	for (int i = 0; i < 36; i++)
-	{
-		glColor3f(indexedColors[indices[i]].r, indexedColors[indices[i]].g, indexedColors[indices[i]].b);
-		glVertex3f(indexedVertices[indices[i]].x, indexedVertices[indices[i]].y, indexedVertices[indices[i]].z);
-	}
-	glEnd();
+		glPushMatrix();
+		glTranslatef(m_position.x, m_position.y, m_position.z);
+		glRotatef(m_rotation, 1.0f, 0.0f, 0.0f);
+		glBegin(GL_TRIANGLES);
+		for (int i = 0; i < 36; i++)
+		{
+			glColor3f(indexedColors[indices[i]].r, indexedColors[indices[i]].g, indexedColors[indices[i]].b);
+			glVertex3f(indexedVertices[indices[i]].x, indexedVertices[indices[i]].y, indexedVertices[indices[i]].z);
+		}
+		glEnd();
 
-	glPopMatrix();
+		glPopMatrix();
 }
 
 void Cube::Update()
