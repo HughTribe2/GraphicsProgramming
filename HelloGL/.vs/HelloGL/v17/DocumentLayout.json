@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\HelloGL.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\Cube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\Cube.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|solutionrelative:HelloGL\\Cube.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1548ECF7-F7FE-4C36-B34A-489DC3E5ACAE}|HelloGL\\HelloGL.vcxproj|C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Structures.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -50,13 +50,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Cube.cpp",
               "DocumentMoniker": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.cpp",
               "RelativeDocumentMoniker": "HelloGL\\Cube.cpp",
               "ToolTip": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.cpp",
               "RelativeToolTip": "HelloGL\\Cube.cpp",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADcAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAEYAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-08T21:34:21.62Z",
               "EditorCaption": ""
@@ -69,14 +69,14 @@
               "RelativeDocumentMoniker": "HelloGL\\HelloGL.cpp",
               "ToolTip": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\HelloGL.cpp",
               "RelativeToolTip": "HelloGL\\HelloGL.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-05-08T21:33:53.619Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Cube.h",
               "DocumentMoniker": "C:\\Users\\HughT\\source\\github\\GraphicsProgramming\\HelloGL\\HelloGL\\Cube.h",
               "RelativeDocumentMoniker": "HelloGL\\Cube.h",
@@ -97,8 +97,7 @@
               "RelativeToolTip": "HelloGL\\Structures.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-08T21:23:28.349Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-08T21:23:28.349Z"
             },
             {
               "$type": "Document",
@@ -146,8 +145,7 @@
               "RelativeToolTip": "HelloGL\\HelloGL.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-03-06T13:06:04.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-06T13:06:04.929Z"
             }
           ]
         }
