@@ -2,25 +2,13 @@
 #include <iostream>
 #include <fstream>
 
-Vertex* Cube::indexedVertices = nullptr;
-
-
-Color* Cube::indexedColors = nullptr;
-
-
-GLushort* Cube::indices = nullptr;
-
-int Cube::numVertices = 0;
-int Cube::numColors = 0;
-int Cube::numIndices = 0;
-
-
-
-Cube::Cube()	
+Cube::Cube(Mesh* mesh, float x, float y, float z)
 {
-	m_position.x = 0.0f;
-	m_position.y = 0.0f;
-	m_position.z = 5.0f;
+	m_mesh = mesh; // store pointer
+
+	m_position.x = x;
+	m_position.y = y;
+	m_position.z = z;
 
 	m_rotation = 0.0f;
 }
@@ -34,7 +22,7 @@ void Cube::Draw()
 {
 	std::cout << "drawing\n";
 
-	if (indexedVertices == nullptr || indexedColors == nullptr || indices == nullptr)
+	if (m_mesh->Colors == nullptr || m_mesh->Colors == nullptr || m_mesh->Indices == nullptr)
 	{
 	std::cout << "something is nullptr\n";
 	}
@@ -46,8 +34,8 @@ void Cube::Draw()
 		glBegin(GL_TRIANGLES);
 		for (int i = 0; i < 36; i++)
 		{
-			glColor3f(indexedColors[indices[i]].r, indexedColors[indices[i]].g, indexedColors[indices[i]].b);
-			glVertex3f(indexedVertices[indices[i]].x, indexedVertices[indices[i]].y, indexedVertices[indices[i]].z);
+			glColor3f(m_mesh->Colors[m_mesh->Indices[i]].r, m_mesh->Colors[m_mesh->Indices[i]].g, m_mesh->Colors[m_mesh->Indices[i]].b);
+			glVertex3f(m_mesh->Vertices[m_mesh->Indices[i]].x, m_mesh->Vertices[m_mesh->Indices[i]].y, m_mesh->Vertices[m_mesh->Indices[i]].z);
 		}
 		glEnd();
 

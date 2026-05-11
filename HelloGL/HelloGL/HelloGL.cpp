@@ -4,43 +4,11 @@
 
 
 HelloGL::HelloGL(int argc, char* argv[])
-{	
-	rotation = 0.0f;
-
-	camera = new Camera();
-
-	Cube::Load((char*)"cube.txt");
-
-	cube = new Cube();
-
-	camera->eye.x = 5.0f; camera->eye.y = 5.0f; camera->eye.z = -5.0f;
-	//camera->eye.x = 0.0f; camera->eye.y = 0.0f; camera->eye.z = 1.0f;
-	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
-	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
-	
-	GLUTCallbacks::Init(this);
-	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
-	glutInitWindowSize(800, 800);
-	glutInitWindowPosition(100, 100);
-	glutCreateWindow("Simple OpenGL Program");
-	glutKeyboardFunc(GLUTCallbacks::Keyboard);
-	glutDisplayFunc(GLUTCallbacks::Display);
-	glutTimerFunc(Refreshrate, GLUTCallbacks::Timer, Refreshrate);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	//set the viewport to be the entire window
-	glViewport(0, 0, 800, 800	);
-
-	//set the correct perspective	
-	gluPerspective(45, 1, 0.5, 1000);
-
-	glMatrixMode(GL_MODELVIEW);
-	glEnable(GL_CULL_FACE);	
-	glCullFace(GL_BACK);
-	glEnable(GL_DEPTH_TEST);	
+{
+	InitGL(argc, argv);
+	InitObjects();
 	glutMainLoop();
-}
+}	
 
 HelloGL::~HelloGL(void)
 {
@@ -63,23 +31,12 @@ void HelloGL::Display()
 
 void HelloGL::Keyboard(unsigned char key, int x, int y)
 {
-	if (key == 'e')
-	{
-		rotation += 2.0f;
-
-	}
-
-	if (key == 'q')
-	{
-		rotation -= 2.0f;
-	}
-
 	// calculate forward vector (direction camera is looking)
 	float forwardX = camera->center.x - camera->eye.x;
 	float forwardZ = camera->center.z - camera->eye.z;
 
 
-	// strafe vector is perpendicular to forward
+	// strafe vector is perpendicular to forward (might change strafe name not sure what else to call it tho)
 	float strafeX = -forwardZ;
 	float strafeZ = forwardX;
 
@@ -121,6 +78,45 @@ if (key == '\b')  // down
 	camera->eye.y -= 0.1f;
 	camera->center.y -= 0.1f;
 }
+}
+
+void HelloGL::InitObjects()
+{
+	camera = new Camera();
+
+	Cube::Load((char*)"cube.txt");
+
+	cube = new Cube();
+
+	camera->eye.x = 5.0f; camera->eye.y = 5.0f; camera->eye.z = -5.0f;
+	//camera->eye.x = 0.0f; camera->eye.y = 0.0f; camera->eye.z = 1.0f;
+	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
+	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
+}
+
+void HelloGL::InitGL(int argc, char* argv[])
+{
+	GLUTCallbacks::Init(this);
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_DEPTH);
+	glutInitWindowSize(800, 800);
+	glutInitWindowPosition(100, 100);
+	glutCreateWindow("Simple OpenGL Program");
+	glutKeyboardFunc(GLUTCallbacks::Keyboard);
+	glutDisplayFunc(GLUTCallbacks::Display);
+	glutTimerFunc(Refreshrate, GLUTCallbacks::Timer, Refreshrate);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	//set the viewport to be the entire window
+	glViewport(0, 0, 800, 800);
+
+	//set the correct perspective	
+	gluPerspective(45, 1, 0.5, 1000);
+
+	glMatrixMode(GL_MODELVIEW);
+	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glEnable(GL_DEPTH_TEST);
 }
 
 void HelloGL::Update()
