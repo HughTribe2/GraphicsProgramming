@@ -7,8 +7,8 @@
 #include "Cube.h"
 #define Refreshrate 16
 
-
 class HelloGL
+
 {
 public:	
 
@@ -25,6 +25,7 @@ public:
 	void Keyboard(unsigned char key, int x, int y);
 
 private:
+
 	float rotation;
 	Camera* camera;
 	Cube* cube;	

@@ -9,10 +9,12 @@ HelloGL::HelloGL(int argc, char* argv[])
 
 	camera = new Camera();
 
+	Cube::Load((char*)"cube.txt");
+
 	cube = new Cube();
 
-	//camera->eye.x = 5.0f; camera->eye.y = 5.0f; camera->eye.z = -5.0f;
-	camera->eye.x = 0.0f; camera->eye.y = 0.0f; camera->eye.z = 1.0f;
+	camera->eye.x = 5.0f; camera->eye.y = 5.0f; camera->eye.z = -5.0f;
+	//camera->eye.x = 0.0f; camera->eye.y = 0.0f; camera->eye.z = 1.0f;
 	camera->center.x = 0.0f; camera->center.y = 0.0f; camera->center.z = 0.0f;
 	camera->up.x = 0.0f; camera->up.y = 1.0f; camera->up.z = 0.0f;
 	
@@ -49,10 +51,10 @@ HelloGL::~HelloGL(void)
 	cube = nullptr;
 }
 
+	
 void HelloGL::Display()
 {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //this clears the scene
-	glTranslatef(0.0f, 0.0f, -5.0f);	
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //this clears the scene	
 	cube->Draw();
 	glFlush();
 	glutSwapBuffers();
@@ -72,35 +74,53 @@ void HelloGL::Keyboard(unsigned char key, int x, int y)
 		rotation -= 2.0f;
 	}
 
-	if (key == 'w')
-	{
-		camera->eye.z += -0.1f;
-	}
+	// calculate forward vector (direction camera is looking)
+	float forwardX = camera->center.x - camera->eye.x;
+	float forwardZ = camera->center.z - camera->eye.z;
 
-	if (key == 's')
-	{
-		camera->eye.z += 0.1f;
-	}
 
-	if (key == 'a')
-	{
-		camera->center.x += -0.1f;
-	}
+	// strafe vector is perpendicular to forward
+	float strafeX = -forwardZ;
+	float strafeZ = forwardX;
 
-	if (key == 'd')
+	if (key == 'w')  // move forward
 	{
-		camera->center.x += 0.1f;
+		camera->eye.x += forwardX * 0.1f;
+		camera->eye.z += forwardZ * 0.1f;
+		camera->center.x += forwardX * 0.1f;
+		camera->center.z += forwardZ * 0.1f;
 	}
-
-	if (key == ' ')
+	if (key == 's')  // move backward
+	{
+		camera->eye.x -= forwardX * 0.1f;
+		camera->eye.z -= forwardZ * 0.1f;
+		camera->center.x -= forwardX * 0.1f;
+		camera->center.z -= forwardZ * 0.1f;
+	}
+	if (key == 'a')  // move left
+	{
+		camera->eye.x -= strafeX * 0.1f;
+		camera->eye.z -= strafeZ * 0.1f;
+		camera->center.x -= strafeX * 0.1f;
+		camera->center.z -= strafeZ * 0.1f;
+	}
+	if (key == 'd')  // move right
+	{
+		camera->eye.x += strafeX * 0.1f;
+		camera->eye.z += strafeZ * 0.1f;
+		camera->center.x += strafeX * 0.1f;
+		camera->center.z += strafeZ * 0.1f;
+	}
+	if (key == ' ')  // up
 	{
 		camera->eye.y += 0.1f;
+		camera->center.y += 0.1f;  // move center too so you don't tilt
 	}
-
-	if (key == '\b')
-	{
-		camera->eye.y += -0.1f;
-	}
+if (key == '\b')  // down
+{
+	camera->eye.y -= 0.1f;
+	camera->center.y -= 0.1f;
+}
 }
 
 void HelloGL::Update()

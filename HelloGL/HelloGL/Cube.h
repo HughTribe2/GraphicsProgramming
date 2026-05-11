@@ -9,11 +9,12 @@ class Cube
 {
 private:
 
-	static Vertex indexedVertices[];
-	static Color indexedColors[];
-	static GLushort indices[];
+	static Vertex* indexedVertices;
+	static Color* indexedColors;
+	static GLushort* indices;
 	float m_rotation;
 	Vector3 m_position;
+	static int numVertices, numColors, numIndices;
 
 public:
 
@@ -22,5 +23,7 @@ public:
 
 	void Draw();
 	void Update();
+
+	static bool Load(char* path);
 };
 

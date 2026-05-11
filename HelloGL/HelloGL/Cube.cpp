@@ -1,48 +1,28 @@
 #include "Cube.h"
+#include <iostream>
+#include <fstream>
 
-Vertex Cube::indexedVertices[] =
-{
-	1, 1, 1,  -1, 1, 1,  // v0,v1, 
-
-	-1,-1, 1,   1,-1, 1,   // v2,v3 
-
-	1,-1,-1,   1, 1,-1,    // v4,v5 
-
-	-1, 1,-1,   -1,-1,-1  // v6,v7 
-};
-
-Color Cube::indexedColors[] =
-{
-	1, 1, 1,   1, 1, 0,   // v0,v1, 
-
-	1, 0, 0,   1, 0, 1,   // v2,v3 
-
-	0, 0, 1,   0, 1, 1,   // v4,v5 
-
-	0, 1, 0,   0, 0, 0	  //v6,v7 
-};
-
-GLushort Cube::indices[] =
-{
-	0, 1, 2,  2, 3, 0,      // front 
-
-	0, 3, 4,  4, 5, 0,      // right 
-
-	0, 5, 6,  6, 1, 0,      // top 
-
-	1, 6, 7,  7, 2, 1,      // left 
-
-	7, 4, 3,  3, 2, 7,      // bottom 
-
-	4, 7, 6,  6, 5, 4		// back
-};
+Vertex* Cube::indexedVertices = nullptr;
 
 
-Cube::Cube()
+Color* Cube::indexedColors = nullptr;
+
+
+GLushort* Cube::indices = nullptr;
+
+int Cube::numVertices = 0;
+int Cube::numColors = 0;
+int Cube::numIndices = 0;
+
+
+
+Cube::Cube()	
 {
 	m_position.x = 0.0f;
-	m_position.x = 0.0f;
+	m_position.y = 0.0f;
 	m_position.z = 5.0f;
+
+	m_rotation = 0.0f;
 }
 
 Cube::~Cube()
@@ -52,18 +32,27 @@ Cube::~Cube()
 
 void Cube::Draw()
 {
-	glPushMatrix();
-	glTranslatef(m_position.x, m_position.y, m_position.z);
-	glRotatef(m_rotation, 1.0f, 0.0f, 0.0f);
-	glBegin(GL_TRIANGLES);
-	for (int i = 0; i < 36; i++)
-	{
-		glColor3f(indexedColors[indices[i]].r, indexedColors[indices[i]].g, indexedColors[indices[i]].b);
-		glVertex3f(indexedVertices[indices[i]].x, indexedVertices[indices[i]].y, indexedVertices[indices[i]].z);
-	}
-	glEnd();
+	std::cout << "drawing\n";
 
-	glPopMatrix();
+	if (indexedVertices == nullptr || indexedColors == nullptr || indices == nullptr)
+	{
+	std::cout << "something is nullptr\n";
+	}
+	else
+	{
+		glPushMatrix();
+		glTranslatef(m_position.x, m_position.y, m_position.z);
+		glRotatef(m_rotation, 1.0f, 0.0f, 0.0f);
+		glBegin(GL_TRIANGLES);
+		for (int i = 0; i < 36; i++)
+		{
+			glColor3f(indexedColors[indices[i]].r, indexedColors[indices[i]].g, indexedColors[indices[i]].b);
+			glVertex3f(indexedVertices[indices[i]].x, indexedVertices[indices[i]].y, indexedVertices[indices[i]].z);
+		}
+		glEnd();
+
+		glPopMatrix();
+	}
 }
 
 void Cube::Update()
@@ -74,4 +63,50 @@ void Cube::Update()
 	{
 		m_rotation = 0.0f;
 	}
+}
+
+bool Cube::Load(char* path)
+{
+	std::ifstream inFile;
+	inFile.open(path);
+	if (!inFile.good())
+	{
+		std::cerr << "Can't open text file" << path << std::endl;
+		return false;
+	}
+
+	inFile >> numVertices;
+	indexedVertices = new Vertex[numVertices];
+	for (int i = 0; i < numVertices; i++)
+	{
+		std::cout << "vertices\n";
+		//populate indexedVertices array using inFile
+		inFile >> indexedVertices[i].x
+			   >> indexedVertices[i].y
+			   >> indexedVertices[i].z;
+	}
+
+	inFile >> numColors;
+	indexedColors = new Color[numColors];
+	for (int i = 0; i < numColors; i++)
+	{
+		std::cout << "colors\n";
+		//load color information
+		inFile >> indexedColors[i].r
+			   >> indexedColors[i].g
+			   >> indexedColors[i].b;
+	}
+
+	inFile >> numIndices;
+	indices = new GLushort[numIndices];
+	for (int i = 0; i < numIndices; i++)
+	{
+		std::cout << "indices\n";
+		//load indices information
+		inFile >> indices[i];
+	}
+
+	inFile.close();
+
+	return true;
 }
