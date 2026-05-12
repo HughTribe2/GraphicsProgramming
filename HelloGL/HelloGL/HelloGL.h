@@ -5,6 +5,8 @@
 #include "GL/freeglut.h" //freeglut library
 #include "Structures.h"
 #include "Cube.h"
+#include "Pyramid.h"
+#include "MeshLoader.h"
 #define Refreshrate 16
 
 class HelloGL
@@ -32,6 +34,6 @@ private:
 
 	float rotation;
 	Camera* camera;
-	Cube* cube;	
+	SceneObject* objects[200];
 };
 

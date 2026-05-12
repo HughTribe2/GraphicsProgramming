@@ -4,8 +4,10 @@
 #include <gl/GLU.h> //Open Utilities
 #include "GL/freeglut.h" //freeglut library
 #include "Structures.h"
+#include "SceneObject.h"
 
-class Cube
+
+class Cube : public SceneObject
 {
 private:
 
@@ -15,12 +17,11 @@ private:
 
 public:
 
-	Cube(Mesh* mesh, float x, float y, float z);
+	Cube(Mesh* mesh, float x, float y, float z) ;
 	~Cube();
 
 	void Draw();
 	void Update();
 
-	static bool Load(char* path);
 };
 

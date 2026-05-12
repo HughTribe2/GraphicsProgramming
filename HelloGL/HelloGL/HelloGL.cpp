@@ -14,21 +14,20 @@ HelloGL::~HelloGL(void)
 {
 	delete camera;
 	camera = nullptr;
-
-	delete cube;
-	cube = nullptr;
 }
 
 	
 void HelloGL::Display()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //this clears the scene	
-	cube->Draw();
+	for (int i = 0; i < 200; i++)
+	{
+		objects[i]->Draw();
+	}
 	glFlush();
 	glutSwapBuffers();
 }
 	
-
 void HelloGL::Keyboard(unsigned char key, int x, int y)
 {
 	// calculate forward vector (direction camera is looking)
@@ -84,9 +83,19 @@ void HelloGL::InitObjects()
 {
 	camera = new Camera();
 
-	Cube::Load((char*)"cube.txt");
+	Mesh* cubeMesh = MeshLoader::Load((char*)"cube.txt");
+	Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
 
-	cube = new Cube();
+	for (int i = 0; i < 100; i++)
+	{
+		objects[i] = new Cube (cubeMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
+	}
+
+	for (int i = 100; i < 200; i++)
+	{
+		objects[i] = new Pyramid(pyramidMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
+	}
+		
 
 	camera->eye.x = 5.0f; camera->eye.y = 5.0f; camera->eye.z = -5.0f;
 	//camera->eye.x = 0.0f; camera->eye.y = 0.0f; camera->eye.z = 1.0f;
@@ -122,21 +131,19 @@ void HelloGL::InitGL(int argc, char* argv[])
 void HelloGL::Update()
 {
 	glLoadIdentity();
-	
-	
+
+
 
 	gluLookAt
 	(
 		camera->eye.x, camera->eye.y, camera->eye.z, camera->center.x, camera->center.y,
 		camera->center.z, camera->up.x, camera->up.y, camera->up.z
 	);
-
-	cube->Update();
+	for (int i = 0; i < 200; i++)
+	{
+		objects[i]->Update();
+	}
 
 	glutPostRedisplay();
-
-	
-
-	
 }
 

@@ -1,5 +1,5 @@
 #include "MeshLoader.h"
-
+#include "Cube.h"
 #include <iostream>
 #include <fstream>
 
@@ -13,7 +13,11 @@ namespace MeshLoader
 
 	void LoadVertices(ifstream& inFile, Mesh& mesh)
 	{
+		
+
 		inFile >> mesh.VertexCount;
+
+		
 
 		if (mesh.VertexCount > 0)
 		{
@@ -48,7 +52,7 @@ namespace MeshLoader
 
 	void LoadIndices(ifstream& inFile, Mesh& mesh)
 	{
-		//TODO: Load Indices
+		//TODO: Load	
 		inFile >> mesh.IndexCount;
 
 		if (mesh.IndexCount > 0)
@@ -58,7 +62,6 @@ namespace MeshLoader
 			for (int i = 0; i < mesh.IndexCount; i++)
 			{
 				inFile >> mesh.Indices[i];
-				
 			}
 		}
 	}
@@ -78,6 +81,14 @@ namespace MeshLoader
 		}
 
 		//LOAD DATA USING METHODS ABOVE
+
+		LoadVertices(inFile, *mesh);
+
+		LoadColours(inFile, *mesh);
+
+		LoadIndices(inFile, *mesh);
+
+		inFile.close();
 
 		return mesh;
 	}
