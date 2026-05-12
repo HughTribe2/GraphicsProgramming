@@ -1,15 +1,17 @@
 #pragma once
 #include "structures.h"
+#include "Texture2D.h"
 
 class SceneObject
 {
 protected:
-
+		
 	Mesh* m_mesh;
+	Texture2D* m_Texture;
 
 public:
 
-	SceneObject(Mesh* mesh);
+	SceneObject(Mesh* mesh, Texture2D* texture);
 
 	virtual ~SceneObject();
 

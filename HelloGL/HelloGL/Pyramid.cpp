@@ -1,7 +1,7 @@
 #include "Pyramid.h"
 #include <iostream>
 
-Pyramid::Pyramid(Mesh* mesh, float x, float y, float z) : SceneObject(mesh)
+Pyramid::Pyramid(Mesh* mesh, float x, float y, float z) : SceneObject(mesh, nullptr)
 {
 	m_mesh = mesh; // store pointer
 
@@ -19,11 +19,7 @@ void Pyramid::Draw()
 {
  
 
-	if (m_mesh->Colors == nullptr || m_mesh->Vertices == nullptr || m_mesh->Indices == nullptr)
-	{
-		std::cout << "something is nullptr\n";
-	}
-	else
+	if (m_mesh->Colors != nullptr && m_mesh->Vertices != nullptr && m_mesh->Indices != nullptr)
 	{
 		glPushMatrix();
 		glTranslatef(m_position.x, m_position.y, m_position.z);

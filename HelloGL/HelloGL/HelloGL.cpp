@@ -1,6 +1,7 @@
 #include "HelloGL.h"
 #include "GLUTCallbacks.h"
 #include <iostream>
+#include "Texture2D.h"
 
 
 HelloGL::HelloGL(int argc, char* argv[])
@@ -86,16 +87,20 @@ void HelloGL::InitObjects()
 	Mesh* cubeMesh = MeshLoader::Load((char*)"cube.txt");
 	Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
 
+	Texture2D* texture = new Texture2D();
+	texture->Load((char*)"Penguins.raw", 512, 512);
+
+	std::cout << "m_ID:  " << texture->GetID();
+
 	for (int i = 0; i < 100; i++)
 	{
-		objects[i] = new Cube (cubeMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
+		objects[i] = new Cube (cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 	}
 
 	for (int i = 100; i < 200; i++)
 	{
 		objects[i] = new Pyramid(pyramidMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 	}
-		
 
 	camera->eye.x = 5.0f; camera->eye.y = 5.0f; camera->eye.z = -5.0f;
 	//camera->eye.x = 0.0f; camera->eye.y = 0.0f; camera->eye.z = 1.0f;
@@ -123,9 +128,11 @@ void HelloGL::InitGL(int argc, char* argv[])
 	gluPerspective(45, 1, 0.5, 1000);
 
 	glMatrixMode(GL_MODELVIEW);
+	glEnable(GL_TEXTURE_2D); // stops the white boxes showing	
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 	glEnable(GL_DEPTH_TEST);
+
 }
 
 void HelloGL::Update()
