@@ -30,10 +30,14 @@ public:
 
 	void InitGL(int argc, char* argv[]);
 
+	void InitLighting();
+
 private:
 
 	float rotation;
 	Camera* camera;
-	SceneObject* objects[200];
+	SceneObject* objects[100];
+	Vector4* m_lightPosition;
+	Lighting* m_lightData;
 };
 

@@ -14,6 +14,9 @@ private:
 	Mesh* m_mesh;	
 	float m_rotation;
 	Vector3 m_position;	
+	Material* m_material;	
+
+	void InitMaterial();
 
 public:
 

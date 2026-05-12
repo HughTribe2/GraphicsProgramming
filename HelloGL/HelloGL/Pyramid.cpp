@@ -19,14 +19,14 @@ void Pyramid::Draw()
 {
  
 
-	if (m_mesh->Colors != nullptr && m_mesh->Vertices != nullptr && m_mesh->Indices != nullptr)
+	if (m_mesh->Normals != nullptr && m_mesh->Vertices != nullptr && m_mesh->Indices != nullptr)
 	{
 		glPushMatrix();
 		glTranslatef(m_position.x, m_position.y, m_position.z);
 		glBegin(GL_TRIANGLES);
 		for (int i = 0; i < 36; i++)
 		{
-			glColor3f(m_mesh->Colors[m_mesh->Indices[i]].r, m_mesh->Colors[m_mesh->Indices[i]].g, m_mesh->Colors[m_mesh->Indices[i]].b);
+			glColor3f(m_mesh->Normals[i].x, m_mesh->Normals[i].y, m_mesh->Normals[i].z);
 			glVertex3f(m_mesh->Vertices[m_mesh->Indices[i]].x, m_mesh->Vertices[m_mesh->Indices[i]].y, m_mesh->Vertices[m_mesh->Indices[i]].z);
 		}
 		glEnd();

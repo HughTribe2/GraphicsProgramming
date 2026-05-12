@@ -8,6 +8,7 @@ HelloGL::HelloGL(int argc, char* argv[])
 {
 	InitGL(argc, argv);
 	InitObjects();
+	InitLighting();
 	glutMainLoop();
 }	
 
@@ -20,8 +21,8 @@ HelloGL::~HelloGL(void)
 	
 void HelloGL::Display()
 {
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); //this clears the scene	
-	for (int i = 0; i < 200; i++)
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	for (int i = 0; i < 100; i++)  
 	{
 		objects[i]->Draw();
 	}
@@ -85,7 +86,19 @@ void HelloGL::InitObjects()
 	camera = new Camera();
 
 	Mesh* cubeMesh = MeshLoader::Load((char*)"cube.txt");
-	Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
+	//Mesh* pyramidMesh = MeshLoader::Load((char*)"pyramid.txt");
+
+	if (cubeMesh == nullptr)
+	{
+		std::cout << "cubeMesh is null - file not found!\n";
+	}
+	else
+	{
+		std::cout << "Vertices: " << cubeMesh->VertexCount << "\n";
+		std::cout << "Normals: " << cubeMesh->NormalCount << "\n";
+		std::cout << "TexCoords: " << cubeMesh->TexCoordCount << "\n";
+		std::cout << "Indices: " << cubeMesh->IndexCount << "\n";
+	}
 
 	Texture2D* texture = new Texture2D();
 	texture->Load((char*)"Penguins.raw", 512, 512);
@@ -97,10 +110,10 @@ void HelloGL::InitObjects()
 		objects[i] = new Cube (cubeMesh, texture, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
 	}
 
-	for (int i = 100; i < 200; i++)
+	/*for (int i = 100; i < 200; i++)
 	{
 		objects[i] = new Pyramid(pyramidMesh, ((rand() % 400) / 10.0f) - 20.0f, ((rand() % 200) / 10.0f) - 10.0f, -(rand() % 1000) / 10.0f);
-	}
+	}*/
 
 	camera->eye.x = 5.0f; camera->eye.y = 5.0f; camera->eye.z = -5.0f;
 	//camera->eye.x = 0.0f; camera->eye.y = 0.0f; camera->eye.z = 1.0f;
@@ -132,6 +145,33 @@ void HelloGL::InitGL(int argc, char* argv[])
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_LIGHTING);
+	glEnable(GL_LIGHT0);
+
+}
+
+void HelloGL::InitLighting()
+{
+	m_lightPosition = new Vector4();
+	m_lightPosition->x = 0.0f;
+	m_lightPosition->y = 0.0f;
+	m_lightPosition->z = 1.0f;
+	m_lightPosition->w = 0.0f;
+
+	m_lightData = new Lighting();
+	m_lightData->Ambient.x = 0.2f;	
+	m_lightData->Ambient.y = 0.2f;
+	m_lightData->Ambient.z = 0.2f;
+	m_lightData->Ambient.w = 1.0f;
+	m_lightData->Diffuse.x = 0.8f;
+	m_lightData->Diffuse.y = 0.8f;
+	m_lightData->Diffuse.z = 0.8f;
+	m_lightData->Diffuse.w = 1.0f;
+	m_lightData->Specular.x = 0.2f;
+	m_lightData->Specular.y = 0.2f;
+	m_lightData->Specular.z = 0.2f;
+	m_lightData->Specular.w = 1.0f;
+
 
 }
 
@@ -139,14 +179,18 @@ void HelloGL::Update()
 {
 	glLoadIdentity();
 
+	glLightfv(GL_LIGHT0, GL_AMBIENT, &(m_lightData->Ambient.x));
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, &(m_lightData->Diffuse.x));
+	glLightfv(GL_LIGHT0, GL_SPECULAR, &(m_lightData->Specular.x));
 
+	glLightfv(GL_LIGHT0, GL_POSITION, &(m_lightPosition->x));
 
 	gluLookAt
 	(
 		camera->eye.x, camera->eye.y, camera->eye.z, camera->center.x, camera->center.y,
 		camera->center.z, camera->up.x, camera->up.y, camera->up.z
 	);
-	for (int i = 0; i < 200; i++)
+	for (int i = 0; i < 100; i++)  
 	{
 		objects[i]->Update();
 	}
